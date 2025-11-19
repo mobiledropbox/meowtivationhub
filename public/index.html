@@ -21,10 +21,12 @@
 <div class="card-body">
 <h1 class="title">Meowtivation: Behind the Scenes</h1>
 <p class="subtitle">Fluffy tabby playtime — support by starring the repo or dropping a comment!</p>
+
 <div class="controls">
 <button id="likeBtn" class="btn like">☆ Like</button>
 <button id="commentToggle" class="btn comment">💬 Comment</button>
 </div>
+
 <form id="commentForm" class="comment-form hidden">
 <textarea id="commentText" placeholder="Write a short encouraging comment..." rows="3"></textarea>
 <div class="comment-actions">
@@ -32,13 +34,21 @@
 <button type="button" id="cancelComment" class="btn cancel">Cancel</button>
 </div>
 </form>
+
 <p class="notice" id="notice"></p>
+
+<!-- ⭐ ADD: Star count display -->
+<p id="starCount" class="star-count"></p>
+
+<!-- 💬 ADD: Latest comments list -->
+<div id="commentList" class="comment-list"></div>
+
 </div>
 </section>
 </main>
 
 <!-- Plyr JS -->
 <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
-<script src="/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/mobiledropbox/landing_pages_scripts@main/meowtivationhub/scripting/main.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-// Ron Penones | November 20th 2025 - Feel free to share and reproduce, the core idea is mine with some assistance of AI. Padayon!
+// Ron Penones | November 21st 2025 - Feel free to share and reproduce, the core idea is mine with some assistance of AI. Padayon!
 
 async function fetchAnalytics() {
   const resp = await fetch("/api/repoStats", { cache: "no-store" }); // Kukuha siya ng data from repoStats.js imbis na html scraping.
@@ -6,9 +6,12 @@ async function fetchAnalytics() {
 
   const data = await resp.json();
 
-  // commentStats object → arrays
-  const labels = Object.keys(data.commentStats);
-  const values = Object.values(data.commentStats);
+  // Para mauna iyong earlier date mula sa kaliwa imbis na latest.
+const sortedEntries = Object.entries(data.commentStats)
+  .sort((a, b) => new Date(a[0]) - new Date(b[0]));
+
+const labels = sortedEntries.map(entry => entry[0]);
+const values = sortedEntries.map(entry => entry[1]);
 
   return {
     totalStars: data.totalStars,

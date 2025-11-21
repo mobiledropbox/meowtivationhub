@@ -5,7 +5,11 @@
       "src": "/api/(.*)",
       "dest": "/api/$1.js"
     },
-
+    
+   {
+      "src": "/presentation",
+      "dest": "/presentation.html"
+    },
     {
       "src": "/analytics",
       "dest": "/analytics.html"
